@@ -1,12 +1,29 @@
+/* 初始设置 */
+
 * {
     margin: 0;
     padding: 0;
 }
 
+
+/* 字体图标导入 */
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('../fonts/iconfont.eot');
+    src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), url('../fonts/iconfont.woff2') format('woff2'), url('../fonts/iconfont.woff') format('woff'), url('../fonts/iconfont.ttf') format('truetype'), url('../fonts/iconfont.svg#iconfont') format('svg');
+}
+
+
+/* 版心 */
+
 .w {
     width: 1919px;
     margin: 0 auto;
 }
+
+
+/* 清楚原有样式 */
 
 a {
     text-decoration: none;
@@ -16,13 +33,18 @@ li {
     list-style: none;
 }
 
+
+/* 头部导航栏 */
+
 .nav-search {
     position: relative;
     margin-top: 40px;
     height: 140px;
-    border: pink 1px solid;
-    text-indent: -9999px;
+    width: 2200px;
 }
+
+
+/* 页面的logo */
 
 .logo {
     width: 380px;
@@ -30,11 +52,14 @@ li {
     background: url("../image/logo_03.png");
 }
 
+
+/* 搜索栏 */
+
 .searcher {
     position: absolute;
-    display: flex;
     top: 25px;
-    left: 430px;
+    left: 575px;
+    display: flex;
     width: 870px;
     height: 80px;
     background-color: pink;
@@ -42,58 +67,102 @@ li {
 
 .searcher .fl {
     width: 780px;
-    border: 1px red solid;
     font: 22px 宋体;
+    border: 2px #ae4141 solid;
+    border-right: 0px solid;
 }
 
 .searcher .fr {
     width: 140px;
-    border: 1px red solid;
     background: url("../image/search-button.png");
+    border: 2px #ae4141 solid;
+    border-left: 0px solid;
 }
+
+
+/* 头部导航页 */
 
 .nav {
     position: absolute;
-    display: flex;
     top: 25px;
-    left: 1380px;
+    left: 1520px;
+    display: flex;
     width: 540px;
     height: 80px;
 }
 
 .nav .release {
-    /* background: url("../image/fb.png"); */
-    border: 1px red solid;
     width: 140px;
     height: 80px;
-    border-radius: 10%;
+    font: 22px 宋体;
+    border: 2px #ae4141 solid;
+    border-radius: 10px;
 }
 
 .nav .release div {
-    display: block;
-    width: 140px;
-    height: 80px;
+    margin: 25px 0 0 30px;
+    color: #ae4141;
 }
 
-.nav .download {
-    flex: 1;
+.nav .release div::before {
+    content: "+";
+    font-size: 28px;
+    font-weight: bold;
+    color: #ae4141;
 }
 
-.nav .login {
+.download {
     flex: 1;
+    margin-left: 70px;
 }
+
+.nav .download div {
+    display: flex;
+    font-family: "iconfont" !important;
+    font-size: 60px;
+    font-style: normal;
+    line-height: 84px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.down {
+    font-size: 26px;
+    font-family: 宋体;
+    color: #7a7474;
+    text-align: center;
+}
+
+.nav .logins {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    font: 26px 宋体;
+    font-weight: bold;
+}
+
+
+/* 头部导航栏 end */
+
+
+/* 页面导航栏 */
 
 nav {
     position: relative;
+    width: 2200px;
     margin-top: 70px;
 }
+
+
+/* 左侧菜单栏 */
 
 .dorpdown {
     float: left;
     width: 425px;
     height: 70px;
-    background-color: #b1191a;
     color: #ffffff;
+    background-color: #b1191a;
 }
 
 .dt {
@@ -109,30 +178,27 @@ nav {
 
 .dd ul {
     display: flex;
-    height: 860px;
     flex-direction: column;
+    height: 860px;
 }
 
 .dd ul li {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    /* justify-content:space-around; */
+    flex: 1;
 }
 
 .dd ul li dt {
     flex: 1;
+    padding: 25px 0 0 40px;
     font: 22px 宋体;
-    padding-top: 25px;
-    padding-left: 40px;
     color: #ae4141;
 }
 
 .dd ul li dd {
     flex: 1;
+    padding: 0 0 25px 40px;
     font: 22px 宋体;
-    padding-bottom: 25px;
-    padding-left: 40px;
     color: #000000;
 }
 
@@ -144,118 +210,133 @@ nav {
 .navitems li {
     float: left;
     padding: 0 20px;
-    /* margin-left: 45px; */
     margin-top: 15px;
     font: 22px 宋体;
     color: #333333;
 }
 
+
+/* 轮播图区 */
+
 .banner {
     position: absolute;
-    display: flex;
     top: 70px;
-    left: 425px;
+    left: 565px;
+    display: flex;
     width: 1494px;
     height: 617px;
 }
 
-.banner img {
-    width: 1024px;
-}
+
+/* 登录表单区 */
 
 .banner form {
     flex: 1;
+    background-color: #ffffff;
 }
 
 .banner form dt {
-    font: 28px 宋体;
-    margin-top: 30px;
-    margin-left: 130px;
+    margin: 30px 0 0 130px;
     padding-left: 40px;
+    font: 28px 宋体;
+}
+
+.banner form dt::before {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin-top: 10px;
+    float: left;
+    /**控制形状**/
+    background: #ae4141;
+    /**控制图标颜色**/
+    margin-right: 10px/**图标与文字距离**/
 }
 
 .banner form dd {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    margin: 30px 0 0 40px;
     width: 400px;
     height: 175px;
-    margin-top: 30px;
-    margin-left: 40px;
-    /* background-color: yellow; */
-    justify-content: space-between;
 }
 
 .banner form dd input {
     height: 70px;
-    border-radius: 10px;
-    font: 28px 宋体;
+    font-family: "iconfont" !important;
+    font-size: 28px;
+    font-style: normal;
     color: #c2b8b8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border-radius: 10px;
 }
 
 .info {
     display: flex;
-    margin-top: 20px;
-    margin-left: 40px;
     justify-content: space-between;
+    margin: 20px 0 0 40px;
     font: 22px 宋体;
 }
 
 .login-button {
-    margin-top: 20px;
-    margin-left: 40px;
-    background: url("../image/login-button.png");
-    border-radius: 10px;
+    margin: 20px 0 0 40px;
     width: 400px;
     height: 70px;
+    background: url("../image/login-button.png");
+    border-radius: 10px;
 }
+
+
+/* 切换登录方式去 */
 
 .other-login ul {
     display: flex;
-    margin-top: 10px;
-    margin-left: 40px;
+    margin: 10px 0 0 40px;
     flex-wrap: wrap;
 }
 
 .other-login ul li {
     width: 200px;
     height: 100px;
-    border: 1px red solid;
 }
 
 .other-login ul li a {
     display: flex;
-    width: 200px;
-    height: 100px;
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
+    width: 200px;
+    height: 100px;
 }
 
-.other-login ul li img:nth-child(1) {
+.other-login ul li .ologin {
+    margin: 10px 0;
     width: 60px;
     height: 60px;
-    /* border: 1px red solid; */
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 
-.other-login ul li img:nth-child(2) {
+.other-login ul li .login-title {
+    margin: 10px 0;
     width: 87px;
     height: 26px;
-    /* border: 1px red solid; */
 }
 
+
+/* 课程广告区 */
+
 .ad ul {
-    width: 1496px;
-    height: 243px;
     position: absolute;
-    display: flex;
     top: 687px;
-    left: 425px;
-    /* border: 1px red solid; */
+    left: 565px;
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
     flex-wrap: wrap;
+    width: 1496px;
+    height: 243px;
 }
 
 .ad img {
@@ -264,24 +345,34 @@ nav {
     height: 200px;
 }
 
+
+/* 页面导航栏 end */
+
+
+/* 内容推荐区 */
+
 .recommend {
-    display: flex;
-    width: 1919px;
+    margin-top: 1190px;
+    width: 2200px;
     height: 950px;
-    margin-top: 1000px;
-    justify-content: space-between;
-    /* background-color: pink; */
 }
+
+.recommend-list {
+    display: flex;
+    justify-content: space-between;
+    width: 1919px;
+}
+
+
+/* 官方推介 */
 
 .official-recommend {
     position: relative;
     width: 775px;
-    /* background-color: pink; */
     font: 28px 宋体;
 }
 
 .recommend-title {
-    /* width: 775px; */
     height: 75px;
     border-bottom: #a9a5a5 2px solid;
 }
@@ -290,6 +381,19 @@ nav {
     position: absolute;
     top: 25px;
     left: 0;
+}
+
+.recommend-title .title::before {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin-top: 10px;
+    float: left;
+    /**控制形状**/
+    background: #ae4141;
+    /**控制图标颜色**/
+    margin-right: 10px/**图标与文字距离**/
 }
 
 .recommend-title a {
@@ -301,20 +405,19 @@ nav {
 
 .official-recommend dd {
     display: flex;
-    width: 775px;
-    height: 875px;
     flex-direction: column;
     justify-content: center;
+    width: 775px;
+    height: 875px;
 }
 
 dd .news {
     display: flex;
-    flex: 1;
-    height: 218.75px;
-    /* border: green 1px solid; */
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
+    flex: 1;
+    height: 218.75px;
 }
 
 .news img {
@@ -323,8 +426,7 @@ dd .news {
 }
 
 .news-title {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0;
     font: 16px 宋体;
 }
 
@@ -335,14 +437,209 @@ dd .news {
     line-height: 20px;
 }
 
+
+/* 小茗头条 */
+
 .stories {
     position: relative;
-    width: 545px;
     font: 28px 宋体;
-    background-color: red;
+    width: 545px;
 }
 
+.stories dd {
+    margin-top: 55px;
+}
+
+.Thors-hammer {
+    display: flex;
+    position: relative;
+    margin-bottom: 20px;
+    width: 545px;
+    color: #000000;
+    font: 16px 宋体;
+}
+
+.date {
+    position: absolute;
+    left: 450px;
+    width: 60px;
+}
+
+.stories li::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin-top: 3px;
+    float: left;
+    border-radius: 10px;
+    /**控制形状**/
+    background: #ae4141;
+    /**控制图标颜色**/
+    margin-right: 10px/**图标与文字距离**/
+}
+
+.msg-list {
+    display: flex;
+    height: 700px;
+    flex-wrap: wrap;
+}
+
+.msg {
+    display: flex;
+    width: 545px;
+    font: 12px 宋体;
+}
+
+
+/* 排行榜 */
+
 .ranking-list {
+    position: relative;
     width: 490px;
-    background-color: yellow;
+    font: 28px 宋体;
+}
+
+.ranking-list .recommend-title {
+    margin-bottom: 50px;
+}
+
+.ranking-list ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 710px;
+    font: 12px 宋体;
+}
+
+.a {
+    border: 1px solid;
+}
+
+.rank {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 440px;
+}
+
+.rank div {
+    margin-left: -150px;
+}
+
+
+/* 课程推荐区 */
+
+.civilization {
+    position: relative;
+    width: 2200px;
+    height: 880px;
+    background-color: #efecec;
+}
+
+.civilization-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1919px;
+    height: 140px;
+    font: 32px 宋体;
+}
+
+.civilization-title .title {
+    margin-left: 60px;
+}
+
+.course {
+    display: flex;
+    height: 655px;
+}
+
+.course .left {
+    width: 324px;
+}
+
+.right ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    flex: 1;
+    margin-left: 30px;
+    height: 655px;
+}
+
+.right li {
+    flex: 1;
+    width: 370px;
+}
+
+.right li img {
+    width: 370px;
+    height: 186px;
+}
+
+.course-info {
+    margin-top: -5px;
+    width: 370px;
+    height: 100px;
+    background-color: #ffffff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.course-title {
+    padding-top: 20px;
+    font-size: 26px;
+    text-align: center;
+}
+
+.learn-num {
+    padding-top: 10px;
+    font-size: 22px;
+}
+
+
+/* 底部导航区 */
+
+footer {
+    width: 2200px;
+}
+
+.mod_help_list {
+    display: flex;
+    width: 1919px;
+}
+
+.mod_help_list_title h2 {
+    margin: 70px 850px;
+    width: 160px;
+    font: 32px 宋体;
+    border-bottom: #ae4141 2px solid;
+}
+
+.mod_help_nav {
+    flex: 1;
+    font: 27px 宋体;
+}
+
+.mod_help_nav_tit {
+    margin-bottom: 50px;
+    font: 28px 宋体;
+}
+
+.erweima {
+    width: 220px;
+    height: 212px;
+    background: url("../image/图层 102.png")
+}
+
+.wxh {
+    margin-top: 30px;
+}
+
+.mod_copyright {
+    margin: 50px 0 60px 0;
+    text-align: center;
 }
